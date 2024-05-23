@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tests', function (Blueprint $table) {
-            $table->id();
-            $table->string('text');
-            $table->timestamps();
+        Schema::table('contact_forms', function (Blueprint $table) {
+            Schema::table('contact_forms', function (Blueprint $table) {
+                $table->string('email',50)->after('title');
+            });
         });
-
-        
     }
 
     /**
@@ -29,6 +27,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tests');
+        Schema::table('contact_forms', function (Blueprint $table) {
+            //
+        });
     }
 };

@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tests', function (Blueprint $table) {
-            $table->id();
-            $table->string('text');
-            $table->timestamps();
+        Schema::table('contact_forms', function (Blueprint $table) {
+            $table->string('contact', 200)->nullable()->after('age');
         });
-
-        
     }
 
     /**
@@ -29,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tests');
+        Schema::table('contact_forms', function (Blueprint $table) {
+            //
+        });
     }
 };
